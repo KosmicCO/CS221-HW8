@@ -1,18 +1,16 @@
 # General Information
 
-## Authors
+### Authors
 
 - Cruz Barnum
 - Prasun Ghosh
 
-## Compiling
+### Compiling
 
 # Huffman Enfoding Details
 
-## Design Choices
+### Design Choices
 
 # Bit IO Details
 
-## Design Choices
-
-
+### Design Choices
