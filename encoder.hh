@@ -34,6 +34,8 @@ class Encoder {
 
 }
 
+// this is not supposed to be here and is only here for reference
+
 int main(int argc, char ** argv){
 
     assert(argc == 1);

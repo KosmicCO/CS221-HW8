@@ -3,8 +3,11 @@
 
 Encoder::Encoder(std::string file)
 {
-    input_file_(file);
-    output_file_(file + ".comp");
+    input_file_(file, ios::binary);
+    output_file_(file + ".comp", ios::binary);
+
+    assert(input_file_.open());
+    assert(output_file_.open());
 
     eof_reached_ = false;
     writer_(&output_file_, nullptr);
