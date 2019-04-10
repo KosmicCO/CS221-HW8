@@ -7,10 +7,8 @@
 
 #include <climits>
 #include <vector>
-#include <iostream>
 
 #include "htree.hh"
-#include "hforest.hh"
 
 class Huffman {
  public:
@@ -36,8 +34,4 @@ class Huffman {
   // a character symbol or HEOF.
   // Finally, updates the frequency table with this additional symbol.
   int decode(bool bit);
-private:
-  HTree::tree_ptr_t createNewhuffman_tree(); //Creates a huffman tree based on current frequency table to be used in encode and decode
-  std::vector<int> freqtable_; // This is the frequency table used in create_huffman_tree, should be made private
-  HTree::tree_ptr_t hufftree_; //Creare a Huffman Tree to be used in encode and decode 
 };
