@@ -1,3 +1,5 @@
+#pragma once
+
 /*
  * A simple class to perform stream I/O on individual bits.
  * Before reading any bits, ensure your input stream still has valid inputs.
