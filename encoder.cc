@@ -6,7 +6,11 @@ Encoder::Encoder(const char * file) {
     output_file_ = new std::ofstream();
 
     input_file_->open(file);
-    output_file_->open("enc.txt.comp");
+
+    auto file_name = file;
+    std::string extent = ".comp";
+
+    output_file_->open(file_name + extent);
 
     assert(* input_file_);
     assert(* output_file_);
@@ -27,6 +31,7 @@ Encoder::~Encoder()
         output_file_->close();
     }
     
+    writer_->~BitIO();    
     delete writer_;
     delete input_file_;
     delete output_file_;
@@ -61,16 +66,17 @@ void Encoder::encode()
 int main(int argc, const char ** argv)
 {
 
-
-    if(false) { //argc != 2){
+    if(argc < 2) { //argc != 2){
         std::cerr << "Needs two command arguments";
         std::cout << argc << argv;
         std::cout.flush();
         assert(false);
     }
 
-    Encoder encode("enc");
-    encode.encode();
+    for(auto i = 1; i < argc; ++i){
+        Encoder encode(argv[i]);
+        encode.encode();
+    }
 }
 
 
